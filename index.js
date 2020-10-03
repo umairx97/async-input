@@ -26,9 +26,9 @@ class AsyncInput extends React.Component {
   };
 
   render() {
-    const elementType = this.props.elementType || 'input'
-    if (elementType === 'input') return <input ref={this.inputRef} onChange={this.onChange} {...this.props.nativeProps} />;
-    else if (elementType === 'textArea') return <textarea ref={this.inputRef} onChange={this.onChange} {...this.props.nativeProps} />;
+    const { nativeProps = {}, elementType = 'input' } = this.props
+    if (elementType === 'input') return <input ref={this.inputRef} onChange={this.onChange} {...nativeProps} />;
+    else if (elementType === 'textArea') return <textarea ref={this.inputRef} onChange={this.onChange} {...nativeProps} />;
   }
 }
 

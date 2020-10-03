@@ -38,7 +38,7 @@ import AsyncInput from 'async-input'
 
  <AsyncInput
     value={this.state.text}
-    nativeInputProps={{
+    nativeProps={{
       type: "text",
       placeholder: "wow",
     }}
@@ -46,6 +46,15 @@ import AsyncInput from 'async-input'
     debounceTime={1000}
 />
 ```
+
+## Props
+
+Prop | Type | Description | Default
+------------ | ------------- | ------------ | -------------
+elementType | string | constructs the element from the type given eg. `input` or `textArea` | input
+onChange | function | onChange handler function to receive the input value | null 
+debounceTime | number | time to wait for the return value from input | 0.5s
+nativeProps | object | native properties that can be passed to html input or text area, e.g. `style`, `className` etc | {}
 
 
 ## ⛏️ Built Using <a name = "built_using"></a>
