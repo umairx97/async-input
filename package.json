@@ -1,0 +1,48 @@
+{
+  "name": "async-input",
+  "version": "1.0.0",
+  "private": false,
+  "description": "React Debounced input",
+  "keywords": [],
+  "repository": {
+    "url": "https://github.com/umairx97/async-input"
+  },
+  "license": "MIT",
+  "author": "Umair Ahmed Bajwa",
+  "contributors": [
+    {
+      "name": "Umair Ahmed Bajwa",
+      "email": "umairahmedbajwa97@gmail.com",
+      "url": "https://github.com/umairx97/"
+    }
+  ],
+  "main": "build/bundle.js",
+  "scripts": {
+    "build": "webpack --config ./webpack.config.js --mode production",
+    "start": "webpack-dev-server --config ./webpack.config.js --mode production",
+    "dev": "webpack-dev-server --config ./webpack.config.js --mode development",
+    "publish:npm": "npm run build && npm publish",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "rxjs": "^6.6.3"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.7.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/preset-env": "^7.7.7",
+    "@babel/preset-react": "^7.7.4",
+    "babel-loader": "^8.0.6",
+    "css-loader": "^3.5.3",
+    "style-loader": "^1.2.1",
+    "webpack": "^4.41.4",
+    "webpack-cli": "^3.3.10",
+    "webpack-dev-server": "^3.10.1"
+  },
+  "peerDependencies": {
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0"
+  }
+}
