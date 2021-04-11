@@ -24,6 +24,15 @@
     "publish:npm": "npm run build && npm publish",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "standard": {
+    "parser": "babel-eslint",
+    "env": [
+      "jest",
+      "es6",
+      "browser",
+      "mocha"
+    ]
+  },
   "dependencies": {
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -36,6 +45,8 @@
     "@babel/preset-react": "^7.7.4",
     "babel-loader": "^8.0.6",
     "css-loader": "^3.5.3",
+    "prop-types": "^15.7.2",
+    "standard": "^16.0.3",
     "style-loader": "^1.2.1",
     "webpack": "^4.41.4",
     "webpack-cli": "^3.3.10",

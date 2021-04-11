@@ -1,7 +1,8 @@
 import React from "react";
+import { string, func, number, object } from 'prop-types'
 import { Subject } from "rxjs";
 import { debounceTime } from "rxjs/operators";
-class AsyncInput extends React.Component {
+class Input extends React.Component {
   constructor(props) {
     super(props);
     this.inputRef = React.createRef();
@@ -19,17 +20,26 @@ class AsyncInput extends React.Component {
     if (this.subscription) this.subscription.unsubscribe();
   }
 
-  onChange = ({ target }) => {
+  changeHandler = ({ target }) => {
     const search = target.value;
     this.inputRef.current.value = search;
     this.debounceSearch.next(search);
   };
 
   render() {
-    const { nativeProps = {}, elementType = 'input' } = this.props
-    if (elementType === 'input') return <input ref={this.inputRef} onChange={this.onChange} {...nativeProps} />;
-    else if (elementType === 'textArea') return <textarea ref={this.inputRef} onChange={this.onChange} {...nativeProps} />;
+    const { nativeProps = {}, elementType = 'input', value} = this.props
+    if (elementType === 'input') return <input ref={this.inputRef} onChange={this.changeHandler} value={value} {...nativeProps} />;
+    else if (elementType === 'textArea') return <textarea ref={this.inputRef} onChange={this.changeHandler} value={value} {...nativeProps} />;
   }
 }
 
-export default AsyncInput;
+
+Input.PropTypes = {
+  elementType: string, 
+  nativeProps: object, 
+  value: string.isRequired, 
+  debounceTime: number, 
+  onChange: func.isRequired,
+}
+
+export default Input;
