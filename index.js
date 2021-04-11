@@ -2,7 +2,7 @@ import React from "react";
 import { string, func, number, object } from 'prop-types'
 import { Subject } from "rxjs";
 import { debounceTime } from "rxjs/operators";
-class Input extends React.Component {
+class AsyncInput extends React.Component {
   constructor(props) {
     super(props);
     this.inputRef = React.createRef();
@@ -34,7 +34,7 @@ class Input extends React.Component {
 }
 
 
-Input.PropTypes = {
+AsyncInput.PropTypes = {
   elementType: string, 
   nativeProps: object, 
   value: string.isRequired, 
